@@ -1,0 +1,21 @@
+# Shopify App Configuration
+name = "calculator-widgets"
+client_id = "your_client_id_here"
+application_url = "https://calculator-widgets.your-domain.com"
+embedded = true
+
+[access_scopes]
+scopes = "write_script_tags,read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://calculator-widgets.your-domain.com/auth/shopify/callback",
+  "https://calculator-widgets.your-domain.com/auth/tokens"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "https://your-dev-store.myshopify.com"
