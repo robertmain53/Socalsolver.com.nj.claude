@@ -1,80 +1,157 @@
-import { CalculatorConfig } from '@/types/calculator';
+import { CalculatorSEO } from '@/lib/seo';
 
-export const compoundInterestConfig: CalculatorConfig = {
+export const compoundInterestCalculator: CalculatorSEO = {
   id: 'compound-interest',
   title: 'Compound Interest Calculator',
-  description: 'Calculate the future value of your investments with compound interest',
-  category: 'finance',
+  description: 'Calculate compound interest with monthly contributions and compare different compounding frequencies.',
   variables: [
     {
       name: 'principal',
-      label: 'Initial Principal',
-      type: 'currency',
+      label: 'Initial Investment',
+      type: 'number',
       required: true,
+      min: 0,
       defaultValue: 10000,
+      unit: 'currency',
       description: 'The initial amount of money invested',
-      validation: {
-        min: 1,
-        max: 10000000
-      }
     },
     {
       name: 'rate',
       label: 'Annual Interest Rate',
-      type: 'percentage',
+      type: 'number',
       required: true,
+      min: 0,
+      max: 50,
       defaultValue: 7,
-      description: 'The annual interest rate (as a percentage)',
-      validation: {
-        min: 0.01,
-        max: 50
-      }
+      unit: 'percentage',
+      description: 'The yearly interest rate (as a percentage)',
     },
     {
       name: 'time',
-      label: 'Time Period',
+      label: 'Investment Period',
       type: 'number',
-      units: 'years',
       required: true,
-      defaultValue: 10,
-      description: 'The number of years the money is invested',
-      validation: {
-        min: 1,
-        max: 100
-      }
+      min: 0,
+      max: 100,
+      defaultValue: 20,
+      unit: 'years',
+      description: 'How long you plan to invest',
+    },
+    {
+      name: 'contribution',
+      label: 'Monthly Contribution',
+      type: 'number',
+      required: false,
+      min: 0,
+      defaultValue: 500,
+      unit: 'currency',
+      description: 'Additional monthly investment amount',
     },
     {
       name: 'frequency',
       label: 'Compounding Frequency',
       type: 'select',
       required: true,
-      defaultValue: '12',
-      description: 'How often the interest is compounded',
+      defaultValue: 12,
       options: [
-        { label: 'Annually', value: '1' },
-        { label: 'Semi-annually', value: '2' },
-        { label: 'Quarterly', value: '4' },
-        { label: 'Monthly', value: '12' },
-        { label: 'Daily', value: '365' }
-      ]
-    }
+        { value: 1, label: 'Annually' },
+        { value: 4, label: 'Quarterly' },
+        { value: 12, label: 'Monthly' },
+        { value: 365, label: 'Daily' },
+      ],
+      description: 'How often interest is compounded',
+    },
   ],
   formulas: [
     {
-      name: 'futureValue',
-      label: 'Future Value',
-      expression: 'principal * (1 + (rate/100)/frequency)^(frequency * time)',
-      resultType: 'currency',
-      description: 'The total amount after compound interest'
+      name: 'finalAmount',
+      label: 'Final Amount',
+      expression: 'principal * (1 + rate/100/frequency)^(frequency*time) + contribution * (((1 + rate/100/frequency)^(frequency*time) - 1) / (rate/100/frequency)) * 12',
+      unit: 'currency',
+      description: 'Total amount after compound growth',
+    },
+    {
+      name: 'totalContributions',
+      label: 'Total Contributions',
+      expression: 'principal + contribution * 12 * time',
+      unit: 'currency',
+      description: 'Sum of all money you put in',
     },
     {
       name: 'totalInterest',
       label: 'Total Interest Earned',
-      expression: '(principal * (1 + (rate/100)/frequency)^(frequency * time)) - principal',
-      resultType: 'currency',
-      description: 'The total interest earned over the investment period'
-    }
+      expression: 'finalAmount - totalContributions',
+      unit: 'currency',
+      description: 'Money earned from compound interest',
+    },
+    {
+      name: 'effectiveRate',
+      label: 'Effective Annual Rate',
+      expression: '((finalAmount / totalContributions)^(1/time) - 1) * 100',
+      unit: 'percentage',
+      description: 'Actual yearly return including contributions',
+    },
   ],
   autoCalculate: true,
-  showSteps: true
+  category: 'finance',
+  tags: ['investment', 'savings', 'retirement', 'interest'],
+  seo: {
+    title: 'Compound Interest Calculator with Monthly Contributions',
+    description: 'Calculate compound interest growth with regular monthly contributions. See how your investments grow over time with our free, accurate compound interest calculator.',
+    keywords: [
+      'compound interest calculator',
+      'investment calculator',
+      'savings calculator',
+      'retirement calculator',
+      'monthly contribution calculator',
+      'investment growth',
+      'compound growth',
+      'financial planning',
+    ],
+    category: 'finance',
+    difficulty: 'beginner',
+    useCase: [
+      'retirement planning',
+      'investment analysis',
+      'savings goals',
+      'education funding',
+      'emergency fund planning',
+    ],
+    relatedTopics: [
+      'simple interest',
+      'annuity calculations',
+      'retirement planning',
+      'investment returns',
+      'time value of money',
+    ],
+  },
+  lastUpdated: '2025-01-15',
+  featured: true,
+  trending: true,
+  explanations: {
+    howItWorks: [
+      'Compound interest is the process where your investment earnings generate their own earnings.',
+      'Unlike simple interest, compound interest calculates returns on both your original investment and previously earned interest.',
+      'The more frequently interest compounds, the more you earn over time.',
+      'Regular monthly contributions significantly boost your final returns through dollar-cost averaging.',
+    ],
+    tips: [
+      'Start investing early to maximize the power of compounding',
+      'Consider higher-frequency compounding when possible',
+      'Regular contributions can dramatically increase your returns',
+      'Even small amounts invested consistently can grow substantially',
+    ],
+    examples: [
+      {
+        scenario: 'Conservative Retirement Savings',
+        inputs: { principal: 10000, rate: 6, time: 30, contribution: 300, frequency: 12 },
+        explanation: 'A moderate approach with monthly contributions for long-term retirement planning.',
+      },
+      {
+        scenario: 'Aggressive Growth Strategy',
+        inputs: { principal: 5000, rate: 10, time: 25, contribution: 800, frequency: 12 },
+        explanation: 'Higher risk, higher reward approach with substantial monthly investments.',
+      },
+    ],
+  },
 };

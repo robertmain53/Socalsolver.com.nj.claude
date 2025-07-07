@@ -18,7 +18,13 @@
     "content:validate": "node scripts/validate-content.js",
     "content:generate": "node scripts/generate-content.js",
     "lighthouse": "lhci autorun",
-    "security": "npm audit && snyk test"
+    "security": "npm audit && snyk test",
+    "validate:calculators": "node src/scripts/validate-calculators.js",
+    "audit:seo": "node src/scripts/seo-audit.js",
+    "build:production": "bash src/scripts/build-production.sh",
+    "analyze": "cross-env ANALYZE=true next build",
+    "start:production": "next start",
+    "test:lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=lighthouse-report.html"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -68,6 +74,9 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
-    "snyk": "^1.1248.0"
+    "snyk": "^1.1248.0",
+    "@next/bundle-analyzer": "^14.0.0",
+    "cross-env": "^7.0.3",
+    "lighthouse": "^11.0.0"
   }
 }
