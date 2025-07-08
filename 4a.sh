@@ -6,7 +6,7 @@
 # Revenue Stream: Widget licensing, premium embeds, WordPress/Shopify plugins
 # Competitive Advantage: Superior embedding options vs OmniCalculator
 # =============================================================================
-
+ 
 set -euo pipefail
 
 # Color codes for output

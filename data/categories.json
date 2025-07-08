@@ -1,0 +1,80 @@
+{
+  "finance": {
+    "name": "Finance",
+    "description": "Comprehensive financial calculators for loans, investments, budgeting, and tax planning",
+    "calculators": [
+      {
+        "id": "mortgage",
+        "name": "Mortgage Payment Calculator",
+        "description": "Calculate monthly mortgage payments with taxes and insurance",
+        "path": "/calculators/mortgage"
+      },
+      {
+        "id": "compound-interest",
+        "name": "Compound Interest Calculator", 
+        "description": "Calculate compound interest growth over time",
+        "path": "/calculators/compound-interest"
+      },
+      {
+        "id": "loan-affordability",
+        "name": "Loan Affordability Calculator",
+        "description": "Determine how much you can borrow",
+        "path": "/calculators/loan-affordability"
+      },
+      {
+        "id": "retirement-planning",
+        "name": "Retirement Planning Calculator",
+        "description": "Plan for your retirement needs",
+        "path": "/calculators/retirement-planning"
+      }
+    ]
+  },
+  "mathematics": {
+    "name": "Mathematics",
+    "description": "Advanced mathematical calculators for algebra, geometry, calculus, and statistics",
+    "calculators": [
+      {
+        "id": "percentage",
+        "name": "Percentage Calculator",
+        "description": "Calculate percentages and percentage changes",
+        "path": "/calculators/percentage"
+      },
+      {
+        "id": "circle-area",
+        "name": "Circle Calculator",
+        "description": "Calculate circle area, circumference, and properties",
+        "path": "/calculators/circle-area"
+      },
+      {
+        "id": "triangle-area",
+        "name": "Triangle Calculator",
+        "description": "Calculate triangle area and perimeter",
+        "path": "/calculators/triangle-area"
+      }
+    ]
+  },
+  "health": {
+    "name": "Health & Fitness", 
+    "description": "Health metrics, nutrition, fitness, and wellness calculators",
+    "calculators": [
+      {
+        "id": "bmi",
+        "name": "BMI Calculator",
+        "description": "Calculate Body Mass Index and health categories",
+        "path": "/calculators/bmi"
+      },
+      {
+        "id": "bmr",
+        "name": "BMR Calculator",
+        "description": "Calculate Basal Metabolic Rate",
+        "path": "/calculators/bmr"
+      },
+      {
+        "id": "body-fat",
+        "name": "Body Fat Calculator",
+        "description": "Estimate body fat percentage",
+        "path": "/calculators/body-fat"
+      }
+    ]
+  }
+}
