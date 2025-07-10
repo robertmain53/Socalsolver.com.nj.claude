@@ -1,0 +1,28 @@
+{
+  "bmi": {
+    "title": "Calculadora de IMC",
+    "description": "Introduce tu altura y peso para calcular tu índice de masa corporal.",
+    "weight": "Peso",
+    "height": "Altura",
+    "calculate": "Calcular IMC",
+    "result": "Tu IMC es"
+  },
+  "mortgage": {
+    "title": "Calculadora de Hipoteca",
+    "description": "Calcula tu pago mensual de hipoteca.",
+    "loan": "Monto del préstamo",
+    "rate": "Tasa de interés (%)",
+    "years": "Plazo del préstamo (años)",
+    "calculate": "Calcular",
+    "result": "Pago mensual"
+  },
+  "compound": {
+    "title": "Interés Compuesto",
+    "description": "Calcula el valor futuro con interés compuesto.",
+    "principal": "Inversión inicial",
+    "rate": "Tasa de interés anual (%)",
+    "years": "Duración de la inversión (años)",
+    "calculate": "Calcular",
+    "result": "Valor futuro"
+  }
+}

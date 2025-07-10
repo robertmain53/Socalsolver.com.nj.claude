@@ -1,0 +1,28 @@
+{
+  "bmi": {
+    "title": "Calcolatore BMI",
+    "description": "Inserisci altezza e peso per calcolare il tuo indice di massa corporea.",
+    "weight": "Peso",
+    "height": "Altezza",
+    "calculate": "Calcola BMI",
+    "result": "Il tuo BMI è"
+  },
+  "mortgage": {
+    "title": "Calcolatore Mutuo",
+    "description": "Calcola la tua rata mensile del mutuo.",
+    "loan": "Importo del prestito",
+    "rate": "Tasso di interesse (%)",
+    "years": "Durata del prestito (anni)",
+    "calculate": "Calcola",
+    "result": "Rata mensile"
+  },
+  "compound": {
+    "title": "Interesse Composto",
+    "description": "Calcola il valore futuro con interesse composto.",
+    "principal": "Investimento iniziale",
+    "rate": "Tasso di interesse annuo (%)",
+    "years": "Durata dell'investimento (anni)",
+    "calculate": "Calcola",
+    "result": "Valore futuro"
+  }
+}
