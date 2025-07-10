@@ -1,0 +1,18 @@
+{
+  "status": "improved",
+  "reviewedBy": "AI",
+  "lastUpdated": "2025-07-10T12:33:00Z",
+  "editorNotes": "Need clarification on edge cases",
+  "changelog": [
+    {
+      "timestamp": "2025-07-09T10:01:00Z",
+      "by": "AI",
+      "note": "Simplified the formula explanation"
+    },
+    {
+      "timestamp": "2025-07-10T12:33:00Z",
+      "by": "Editor",
+      "note": "Approved for publish"
+    }
+  ]
+}

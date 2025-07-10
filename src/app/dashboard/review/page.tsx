@@ -1,3 +1,6 @@
+// 👇 Add this as the first line
+'use client';
+
 import fs from 'fs/promises';
 import path from 'path';
 import Link from 'next/link';
