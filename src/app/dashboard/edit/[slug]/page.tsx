@@ -1,29 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
 import { useParams } from 'next/navigation';
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
 import { MDXRemote } from 'next-mdx-remote/rsc';
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
 import MDXComponents from '@/components/MDXComponents';
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
-const [mdxText, setMdxText] = useState(null);
 
 export default function EditCalculatorPage() {
   const { slug } = useParams();
@@ -35,23 +15,17 @@ export default function EditCalculatorPage() {
   const [saving, setSaving] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Load content and status
   useEffect(() => {
     const load = async () => {
-      try {
-        const [mdxRes, statusRes] = await Promise.all([
-          fetch(`/api/content/${slug}`),
-          fetch(`/api/status/${slug}`)
-        ]);
-        const mdxText = await mdxRes.text();
-        const statusJson = await statusRes.json();
-        setContent(mdxText);
-        setOriginal(mdxText);
-        setStatus(statusJson);
-      } catch (e) {
-        console.error('Failed to load content or status', e);
-      } finally {
-        setLoading(false);
-      }
+      const mdxRes = await fetch(`/api/content/${slug}`);
+      const statusRes = await fetch(`/api/status/${slug}`);
+      const mdxText = await mdxRes.text();
+      const statusJson = await statusRes.json();
+      setContent(mdxText);
+      setOriginal(mdxText); // clone not needed if you await .text() directly
+      setStatus(statusJson);
+      setLoading(false);
     };
     load();
   }, [slug]);
@@ -64,7 +38,7 @@ export default function EditCalculatorPage() {
       body: JSON.stringify({ slug, draft: content })
     });
     const data = await res.json();
-    if (data.diff) setDiff(data.diff);
+    setDiff(data.diff || '');
     if (data.content) setContent(data.content);
     setSaving(false);
   };
@@ -76,25 +50,10 @@ export default function EditCalculatorPage() {
       body: JSON.stringify({ slug })
     });
     const data = await res.json();
-    if (data.feedback) setReview(data.feedback);
+    setReview(data.feedback || '');
   };
 
   const handleMetadataSave = async () => {
-
-useEffect(() => {
-  (async () => {
-
-useEffect(() => {
-  (async () => {
-
-useEffect(() => {
-  (async () => {
-
-useEffect(() => {
-  (async () => {
-
-useEffect(() => {
-  (async () => {
     await fetch('/api/status/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -106,19 +65,21 @@ useEffect(() => {
     });
   };
 
-  if (loading) return <p className="p-10">Loading...</p>;
+  if (loading) {
+    return <p className="p-10">Loading...</p>;
+  }
 
   return (
     <div className="max-w-screen-xl mx-auto p-8 space-y-10">
       <h1 className="text-2xl font-bold">✍️ Editing: {slug}</h1>
 
-      {/* Status Editor */}
+      {/* Status + Notes Editor */}
       <div className="bg-gray-100 p-4 rounded border space-y-3">
         <div>
           <label className="block text-sm font-medium">Status</label>
           <select
             value={status.status}
-            onChange={(e) => setStatus({ ...status, status: e.target.value })}
+            onChange={e => setStatus({ ...status, status: e.target.value })}
             className="mt-1 border px-2 py-1 rounded w-full"
           >
             <option value="draft">Draft</option>
@@ -132,7 +93,7 @@ useEffect(() => {
           <label className="block text-sm font-medium">Editor Notes</label>
           <textarea
             value={status.editorNotes}
-            onChange={(e) => setStatus({ ...status, editorNotes: e.target.value })}
+            onChange={e => setStatus({ ...status, editorNotes: e.target.value })}
             className="mt-1 border px-2 py-1 rounded w-full"
             rows={2}
           />
@@ -146,16 +107,17 @@ useEffect(() => {
         </button>
       </div>
 
-      {/* Editor and Preview */}
+      {/* Markdown Editor & Live Preview */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <label className="text-sm font-semibold">Markdown (.mdx)</label>
           <textarea
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={e => setContent(e.target.value)}
             className="w-full h-[600px] border font-mono p-3 rounded"
           />
         </div>
+
         <div>
           <label className="text-sm font-semibold">Live Preview</label>
           <div className="prose dark:prose-invert p-3 border rounded h-[600px] overflow-auto bg-white">
@@ -173,6 +135,7 @@ useEffect(() => {
         >
           🤖 Improve with AI
         </button>
+
         <button
           onClick={handleReview}
           className="bg-purple-600 text-white px-4 py-2 rounded"
@@ -199,13 +162,3 @@ useEffect(() => {
     </div>
   );
 }
-  })();
-}, []);
-  })();
-}, []);
-  })();
-}, []);
-  })();
-}, []);
-  })();
-}, []);
