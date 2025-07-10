@@ -2,3 +2,24 @@
   "title": "Welcome to SocalSolver!",
   "description": "Your go-to place for professional calculators."
 }
+,
+"calculators": {
+  "title": "Professional Calculators",
+  "descriptio
+,
+"calculators": {
+  "title": "Professional Calculators",
+  "description": "Choose from our collection of accurate, professional calculators.",
+  "search": "Search calculators...",
+  "noneFound": "No calculators found",
+  "tryAgain": "Try adjusting your search terms."
+}
+,
+"bmi": {
+  "title": "BMI Calculator",
+  "description": "Enter your height and weight to calculate your Body Mass Index.",
+  "weight": "Weight",
+  "height": "Height",
+  "calculate": "Calculate BMI",
+  "result": "Your BMI is"
+}

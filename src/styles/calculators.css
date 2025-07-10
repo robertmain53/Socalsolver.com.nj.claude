@@ -1,0 +1,72 @@
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.header, .footer {
+  text-align: center;
+  padding: 1.5rem;
+}
+.header h1 {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 0.5rem 0;
+}
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.main {
+  padding: 2rem 0;
+}
+.intro {
+  text-align: center;
+}
+.searchBox {
+  margin: 1.5rem auto;
+  max-width: 300px;
+  position: relative;
+}
+.searchBox input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  transition: all 0.2s ease-in-out;
+}
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card h3 {
+  margin: 0.5rem 0;
+}
+.card p {
+  margin: 0;
+}
+.notFound {
+  text-align: center;
+  padding: 2rem;
+}
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
