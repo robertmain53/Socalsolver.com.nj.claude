@@ -109,7 +109,7 @@ export class MetadataGenerator {
  openGraph: {
  title,
  description,
- url: `${baseUrl}/calculators/category/${category}`,
+ url: `${baseUrl}/categories/${category}`,
  type: 'website',
  images: [
  {

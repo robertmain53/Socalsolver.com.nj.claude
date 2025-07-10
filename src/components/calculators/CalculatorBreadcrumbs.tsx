@@ -33,7 +33,7 @@ export function CalculatorBreadcrumbs({ calculator }: Props) {
  <div className="flex items-center">
  <ChevronRightIcon className="w-4 h-4 text-gray-400" />
  <Link
- href={`/calculators/category/${calculator.seo.category}`}
+ href={`/categories/${calculator.seo.category}`}
  className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 capitalize"
  >
  {calculator.seo.category}

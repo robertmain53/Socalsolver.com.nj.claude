@@ -97,7 +97,7 @@ export default function CalculatorsPage() {
  };
 
  return (
- <Link key={category} href={`/calculators/category/${category}`}>
+ <Link key={category} href={`/categories/${category}`}>
  <Card className="hover:shadow-lg transition-shadow cursor-pointer">
  <CardHeader>
  <div className="flex items-center gap-3">

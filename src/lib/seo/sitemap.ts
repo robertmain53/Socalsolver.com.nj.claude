@@ -25,7 +25,7 @@ export class SitemapGenerator {
  baseUrl: string = 'https://yourcalculator.com'
  ): SitemapEntry[] {
  return categories.map(category => ({
- url: `${baseUrl}/calculators/category/${category}`,
+ url: `${baseUrl}/categories/${category}`,
  lastModified: new Date(),
  changeFrequency: 'daily' as const,
  priority: 0.7,

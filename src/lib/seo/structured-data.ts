@@ -62,7 +62,7 @@ export class StructuredDataGenerator {
  '@type': 'ListItem',
  position: 3,
  name: calculator.seo.category,
- item: `${baseUrl}/calculators/category/${calculator.seo.category}`,
+ item: `${baseUrl}/categories/${calculator.seo.category}`,
  },
  {
  '@type': 'ListItem',
@@ -112,7 +112,7 @@ export class StructuredDataGenerator {
  calculators: CalculatorSEO[],
  baseUrl: string = 'https://yourcalculator.com'
  ): StructuredData[] {
- const categoryUrl = `${baseUrl}/calculators/category/${category}`;
+ const categoryUrl = `${baseUrl}/categories/${category}`;
  
  const collectionData: StructuredData = {
  '@context': 'https://schema.org',
