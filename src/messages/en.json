@@ -23,3 +23,22 @@
   "calculate": "Calculate BMI",
   "result": "Your BMI is"
 }
+,
+"mortgage": {
+  "title": "Mortgage Calculator",
+  "description": "Calculate your monthly mortgage payment.",
+  "loan": "Loan Amount",
+  "rate": "Interest Rate (%)",
+  "years": "Loan Term (Years)",
+  "calculate": "Calculate",
+  "result": "Monthly Payment"
+},
+"compound": {
+  "title": "Compound Interest Calculator",
+  "description": "Calculate future value with compound interest.",
+  "principal": "Initial Investment",
+  "rate": "Annual Interest Rate (%)",
+  "years": "Investment Duration (Years)",
+  "calculate": "Calculate",
+  "result": "Future Value"
+}
