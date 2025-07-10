@@ -5,7 +5,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import Link from 'next/link';
 
-export default function ReviewDashboard() {
+export default async function ReviewDashboard() {
   const files = await fs.readdir('content/calculators');
   const drafts = files.filter(f => f.endsWith('.mdx'));
 
