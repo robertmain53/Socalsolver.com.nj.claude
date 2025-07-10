@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -10,11 +10,11 @@ export default function CalculatorRow({ row }: { row: any }) {
   const handleReview = async () => {
     setReviewing(true);
     setReviewStatus('Reviewing...');
-    const res = await fetch('/api/review', {
+    const res = fetch('/api/review', {
       method: 'POST',
       body: JSON.stringify({ slug: row.slug }),
     });
-    const data = await res.json();
+    const data = res.json();
     setReviewStatus(data.status || 'Review complete');
     setReviewing(false);
   };

@@ -1,37 +1,25 @@
+// ✅ Client Component
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useState } from 'react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import MDXComponents from '@/components/MDXComponents';
 
-export default function EditCalculatorPage() {
+type Props = {
+  slug: string;
+  initialContent: string;
+  initialStatus: {
+    status: string;
+    editorNotes: string;
+  };
+};
 
-useEffect(() => {
-  (async () => {
-  const { slug } = useParams();
-  const [content, setContent] = useState('');
-  const [original, setOriginal] = useState('');
-  const [status, setStatus] = useState({ status: 'draft', editorNotes: '' });
+export default function EditorClient({ slug, initialContent, initialStatus }: Props) {
+  const [content, setContent] = useState(initialContent);
+  const [status, setStatus] = useState(initialStatus);
   const [diff, setDiff] = useState('');
   const [review, setReview] = useState('');
   const [saving, setSaving] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  // Load content and status
-  useEffect(() => {
-    const load = async () => {
-      const mdxRes = await fetch(`/api/content/${slug}`);
-      const statusRes = await fetch(`/api/status/${slug}`);
-      const mdxText = await mdxRes.text();
-      const statusJson = await statusRes.json();
-      setContent(mdxText);
-      setOriginal(mdxText); // clone not needed if you await .text() directly
-      setStatus(statusJson);
-      setLoading(false);
-    };
-    load();
-  }, [slug]);
 
   const handleImprove = async () => {
     setSaving(true);
@@ -60,17 +48,9 @@ useEffect(() => {
     await fetch('/api/status/update', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        slug,
-        status: status.status,
-        editorNotes: status.editorNotes
-      })
+      body: JSON.stringify({ slug, status: status.status, editorNotes: status.editorNotes })
     });
   };
-
-  if (loading) {
-    return <p className="p-10">Loading...</p>;
-  }
 
   return (
     <div className="max-w-screen-xl mx-auto p-8 space-y-10">
@@ -110,7 +90,7 @@ useEffect(() => {
         </button>
       </div>
 
-      {/* Markdown Editor & Live Preview */}
+      {/* Editor & Preview */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <label className="text-sm font-semibold">Markdown (.mdx)</label>
@@ -138,12 +118,11 @@ useEffect(() => {
         >
           🤖 Improve with AI
         </button>
-
         <button
           onClick={handleReview}
           className="bg-purple-600 text-white px-4 py-2 rounded"
         >
-          🧠 Run AI Rubric Review
+          🧠 Run AI Review
         </button>
       </div>
 
@@ -165,5 +144,3 @@ useEffect(() => {
     </div>
   );
 }
-  })();
-}, []);
