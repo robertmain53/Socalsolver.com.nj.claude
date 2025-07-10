@@ -16,20 +16,20 @@ const router = express.Router();
 
 // API v2 welcome message
 router.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Calculator API v2',
-    version: '2.0.0',
-    features: [
-      'Enhanced performance',
-      'Advanced analytics',
-      'Batch processing',
-      'Custom formulas',
-      'Real-time webhooks',
-      'Data export formats'
-    ],
-    documentation: 'https://docs.yourcalculatorsite.com/api/v2',
-    changelog: 'https://docs.yourcalculatorsite.com/api/changelog'
-  });
+ res.json({
+ message: 'Welcome to Calculator API v2',
+ version: '2.0.0',
+ features: [
+ 'Enhanced performance',
+ 'Advanced analytics',
+ 'Batch processing',
+ 'Custom formulas',
+ 'Real-time webhooks',
+ 'Data export formats'
+ ],
+ documentation: 'https://docs.yourcalculatorsite.com/api/v2',
+ changelog: 'https://docs.yourcalculatorsite.com/api/changelog'
+ });
 });
 
 // Route handlers

@@ -1,208 +1,205 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* Sunset Coastal Design System */
 :root {
-  --color-primary: #FFD166;    /* Sunset Yellow */
-  --color-secondary: #FF8C42;  /* Orange */
-  --color-accent: #FFA69E;     /* Coral Pink */
-  --color-warm: #F9C74F;       /* Golden */
-  --color-cool: #4D9FEC;       /* Ocean Blue */
-  --color-mint: #76C7C0;       /* Coastal Mint */
-  --color-coral: #FF5E5B;      /* Bright Coral */
-  --color-navy: #073B4C;       /* Deep Navy */
-  
-  --gradient-sunset: linear-gradient(135deg, #FFD166 0%, #FF8C42 50%, #FFA69E 100%);
-  --gradient-ocean: linear-gradient(135deg, #4D9FEC 0%, #76C7C0 100%);
-  --gradient-warm: linear-gradient(135deg, #F9C74F 0%, #FFD166 100%);
-  --gradient-coral: linear-gradient(135deg, #FF5E5B 0%, #FFA69E 100%);
+ --color-primary: #FFD166; /* Sunset Yellow */
+ --color-secondary: #FF8C42; /* Orange */
+ --color-accent: #FFA69E; /* Coral Pink */
+ --color-warm: #F9C74F; /* Golden */
+ --color-cool: #4D9FEC; /* Ocean Blue */
+ --color-mint: #76C7C0; /* Coastal Mint */
+ --color-coral: #FF5E5B; /* Bright Coral */
+ --color-navy: #073B4C; /* Deep Navy */
+ 
+ --gradient-sunset: linear-gradient(135deg, #FFD166 0%, #FF8C42 50%, #FFA69E 100%);
+ --gradient-ocean: linear-gradient(135deg, #4D9FEC 0%, #76C7C0 100%);
+ --gradient-warm: linear-gradient(135deg, #F9C74F 0%, #FFD166 100%);
+ --gradient-coral: linear-gradient(135deg, #FF5E5B 0%, #FFA69E 100%);
 }
 
 @layer base {
-  html {
-    font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply text-gray-900 bg-gradient-to-br from-orange-50 via-pink-50 to-blue-50 min-h-screen;
-  }
-  
-  * {
-    @apply transition-all duration-200 ease-in-out;
-  }
+ html {
+ font-family: 'Inter', sans-serif;
+ scroll-behavior: smooth;
+ }
+ 
+ body {
+ @apply text-gray-900 bg-gradient-to-br from-orange-50 via-pink-50 to-blue-50 min-h-screen;
+ }
+ 
+ * {
+ @apply transition-all duration-200 ease-in-out;
+ }
 }
 
 @layer components {
-  /* Button Components */
-  .btn-gradient-primary {
-    @apply bg-gradient-to-r from-orange-400 to-pink-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
-  }
-  
-  .btn-gradient-secondary {
-    @apply bg-gradient-to-r from-blue-400 to-teal-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
-  }
-  
-  .btn-gradient-success {
-    @apply bg-gradient-to-r from-green-400 to-blue-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
-  }
-  
-  .btn-outline {
-    @apply border-2 border-orange-400 text-orange-600 hover:bg-orange-50 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
-  }
-  
-  /* Card Components */
-  .card-gradient {
-    @apply bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100;
-  }
-  
-  .card-sunset {
-    @apply bg-gradient-to-br from-orange-50 to-pink-50 rounded-xl shadow-lg border border-orange-200;
-  }
-  
-  .card-ocean {
-    @apply bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl shadow-lg border border-blue-200;
-  }
-  
-  /* Text Gradients */
-  .text-gradient-sunset {
-    @apply bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent;
-  }
-  
-  .text-gradient-ocean {
-    @apply bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent;
-  }
-  
-  /* Input Components */
-  .input-sunset {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all;
-  }
-  
-  /* Animations */
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .animate-pulse-slow {
-    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-  
-  /* Result Cards */
-  .result-card-success {
-    @apply p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200;
-  }
-  
-  .result-card-warning {
-    @apply p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200;
-  }
-  
-  .result-card-error {
-    @apply p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border border-red-200;
-  }
-  
-  .result-card-info {
-    @apply p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg border border-blue-200;
-  }
+ /* Button Components */
+ .btn-gradient-primary {
+ @apply bg-gradient-to-r from-orange-400 to-pink-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
+ }
+ 
+ .btn-gradient-secondary {
+ @apply bg-gradient-to-r from-blue-400 to-teal-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
+ }
+ 
+ .btn-gradient-success {
+ @apply bg-gradient-to-r from-green-400 to-blue-400 text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
+ }
+ 
+ .btn-outline {
+ @apply border-2 border-orange-400 text-orange-600 hover:bg-orange-50 font-semibold rounded-lg px-4 py-2 transition-all duration-200;
+ }
+ 
+ /* Card Components */
+ .card-gradient {
+ @apply bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100;
+ }
+ 
+ .card-sunset {
+ @apply bg-gradient-to-br from-orange-50 to-pink-50 rounded-xl shadow-lg border border-orange-200;
+ }
+ 
+ .card-ocean {
+ @apply bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl shadow-lg border border-blue-200;
+ }
+ 
+ /* Text Gradients */
+ .text-gradient-sunset {
+ @apply bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent;
+ }
+ 
+ .text-gradient-ocean {
+ @apply bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent;
+ }
+ 
+ /* Input Components */
+ .input-sunset {
+ @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all;
+ }
+ 
+ /* Animations */
+ .animate-float {
+ animation: float 3s ease-in-out infinite;
+ }
+ 
+ .animate-pulse-slow {
+ animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+ }
+ 
+ /* Result Cards */
+ .result-card-success {
+ @apply p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border border-green-200;
+ }
+ 
+ .result-card-warning {
+ @apply p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200;
+ }
+ 
+ .result-card-error {
+ @apply p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-lg border border-red-200;
+ }
+ 
+ .result-card-info {
+ @apply p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg border border-blue-200;
+ }
 }
 
 @layer utilities {
-  /* Custom scrollbar */
-  .scrollbar-sunset::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .scrollbar-sunset::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-  }
-  
-  .scrollbar-sunset::-webkit-scrollbar-thumb {
-    background: var(--gradient-sunset);
-    border-radius: 4px;
-  }
-  
-  .scrollbar-sunset::-webkit-scrollbar-thumb:hover {
-    background: var(--gradient-coral);
-  }
-  
-  /* Glass morphism effects */
-  .glass-sunset {
-    background: rgba(255, 209, 102, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 209, 102, 0.2);
-  }
-  
-  .glass-ocean {
-    background: rgba(77, 159, 236, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(77, 159, 236, 0.2);
-  }
+ /* Custom scrollbar */
+ .scrollbar-sunset::-webkit-scrollbar {
+ width: 8px;
+ }
+ 
+ .scrollbar-sunset::-webkit-scrollbar-track {
+ background: #f1f1f1;
+ border-radius: 4px;
+ }
+ 
+ .scrollbar-sunset::-webkit-scrollbar-thumb {
+ background: var(--gradient-sunset);
+ border-radius: 4px;
+ }
+ 
+ .scrollbar-sunset::-webkit-scrollbar-thumb:hover {
+ background: var(--gradient-coral);
+ }
+ 
+ /* Glass morphism effects */
+ .glass-sunset {
+ background: rgba(255, 209, 102, 0.1);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(255, 209, 102, 0.2);
+ }
+ 
+ .glass-ocean {
+ background: rgba(77, 159, 236, 0.1);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(77, 159, 236, 0.2);
+ }
 }
 
 /* Keyframe animations */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+ 0%, 100% {
+ transform: translateY(0px);
+ }
+ 50% {
+ transform: translateY(-10px);
+ }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
+ 0% {
+ background-position: -200px 0;
+ }
+ 100% {
+ background-position: calc(200px + 100%) 0;
+ }
 }
 
 /* Print styles */
 @media print {
-  .no-print {
-    display: none !important;
-  }
-  
-  body {
-    background: white !important;
-  }
+ .no-print {
+ display: none !important;
+ }
+ 
+ body {
+ background: white !important;
+ }
 }
 
 /* Dark mode support (for future) */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #FFD166;
-    --color-secondary: #FF8C42;
-    /* Keep sunset theme even in dark mode */
-  }
+ :root {
+ --color-primary: #FFD166;
+ --color-secondary: #FF8C42;
+ /* Keep sunset theme even in dark mode */
+ }
 }
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .btn-gradient-primary {
-    @apply bg-orange-600 border-2 border-white;
-  }
+ .btn-gradient-primary {
+ @apply bg-orange-600 border-2 border-white;
+ }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-  }
+ * {
+ transition: none !important;
+ animation: none !important;
+ }
 }
 
 /* Mobile optimizations */
 @media (max-width: 640px) {
-  .card-gradient {
-    @apply mx-2;
-  }
-  
-  .btn-gradient-primary {
-    @apply text-sm px-3 py-2;
-  }
+ .card-gradient {
+ @apply mx-2;
+ }
+ 
+ .btn-gradient-primary {
+ @apply text-sm px-3 py-2;
+ }
 }

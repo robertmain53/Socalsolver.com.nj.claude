@@ -11,28 +11,27 @@
     "generate-translations": "node scripts/translation-script.js --component"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
+    "critters": "^0.0.25",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^10.16.0",
+    "lucide-react": "^0.292.0",
     "next": "13.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "^3.3.0",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "lucide-react": "^0.292.0",
-    "recharts": "^2.8.0",
-    "framer-motion": "^10.16.0",
     "react-hook-form": "^7.47.0",
-    "zod": "^3.22.4",
-    "date-fns": "^2.30.0",
-    "clsx": "^2.0.0"
+    "recharts": "^2.8.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
-    "typescript": "^5.2.2",
     "eslint": "^8.51.0",
     "eslint-config-next": "13.5.6",
-    "prettier": "^3.0.3"
+    "glob": "^11.0.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "keywords": [
     "calculator",
