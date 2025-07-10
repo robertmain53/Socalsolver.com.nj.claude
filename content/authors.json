@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ava-reed",
+    "name": "Dr. Ava Reed",
+    "bio": "PhD in Mathematics. 10+ years in educational content creation.",
+    "role": "author",
+    "photo": "/images/authors/ava-reed.jpg"
+  },
+  {
+    "id": "samir-patel",
+    "name": "Samir Patel, CFA",
+    "bio": "Finance expert and professional reviewer.",
+    "role": "reviewer",
+    "photo": "/images/authors/samir-patel.jpg"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "title": "Compound Interest Calculator",
+  "slug": "compound-interest",
+  "category": "finance",
+  "tags": ["interest", "investment", "time"],
+  "difficulty": "medium",
+  "audience": "learners",
+  "explainPrompt": "Explain this formula to a college-level learner. Break down each variable. Give one example. Avoid jargon.",
+  "learnPrompt": "Why does this concept matter? Provide historical and real-world context. Clarify common misunderstandings.",
+  "challengePrompt": "Create a challenge that requires modifying or extending the formula. Then explain the answer.",
+  "styleGuide": "Socratic, friendly, visual, curiosity-driven"
+}
