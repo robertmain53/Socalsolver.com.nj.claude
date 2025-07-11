@@ -14,7 +14,7 @@ export function formatFileSize(bytes: number): string {
  return `${Math.round(bytes / Math.pow(1024, i) * 100) / 100} ${sizes[i]}`
 }
 
-export function extractExcerpt(content: string, maxLength: number = 160): string {
+export function extractExcerpt(content: string, maxLength = 160): string {
  const plainText = content.replace(/<[^>]*>/g, '').trim()
  return truncate(plainText, maxLength)
 }

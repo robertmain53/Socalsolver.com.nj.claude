@@ -408,7 +408,7 @@ export function searchCalculators(query: string): CalculatorConfig[] {
  );
 }
 
-export function getRelatedCalculators(calculatorId: string, limit: number = 4): CalculatorConfig[] {
+export function getRelatedCalculators(calculatorId: string, limit = 4): CalculatorConfig[] {
  const calculator = getCalculatorConfig(calculatorId);
  if (!calculator) return [];
 

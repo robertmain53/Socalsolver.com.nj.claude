@@ -21,7 +21,7 @@ export interface CalculatorSEO extends CalculatorConfig {
 export class MetadataGenerator {
  static generateCalculatorMetadata(
  calculator: CalculatorSEO,
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): Metadata {
  const { id, title, description, seo } = calculator;
  const canonicalUrl = `${baseUrl}/calculators/${id}`;
@@ -94,7 +94,7 @@ export class MetadataGenerator {
  static generateCategoryMetadata(
  category: string,
  calculators: CalculatorSEO[],
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): Metadata {
  const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
  const calculatorCount = calculators.length;
@@ -129,7 +129,7 @@ export class MetadataGenerator {
  };
  }
 
- static generateHomeMetadata(baseUrl: string = 'https://yourcalculator.com'): Metadata {
+ static generateHomeMetadata(baseUrl = 'https://yourcalculator.com'): Metadata {
  return {
  title: 'Free Online Calculators - Instant, Accurate Results',
  description: 'Access hundreds of free online calculators for math, finance, health, science, and more. Get instant, accurate results with step-by-step explanations.',

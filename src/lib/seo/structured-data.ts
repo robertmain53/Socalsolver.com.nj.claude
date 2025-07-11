@@ -9,7 +9,7 @@ export interface StructuredData {
 export class StructuredDataGenerator {
  static generateCalculatorStructuredData(
  calculator: CalculatorSEO,
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): StructuredData[] {
  const canonicalUrl = `${baseUrl}/calculators/${calculator.id}`;
  
@@ -110,7 +110,7 @@ export class StructuredDataGenerator {
  static generateCategoryStructuredData(
  category: string,
  calculators: CalculatorSEO[],
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): StructuredData[] {
  const categoryUrl = `${baseUrl}/categories/${category}`;
  
@@ -139,7 +139,7 @@ export class StructuredDataGenerator {
  return [collectionData];
  }
 
- static generateSiteStructuredData(baseUrl: string = 'https://yourcalculator.com'): StructuredData {
+ static generateSiteStructuredData(baseUrl = 'https://yourcalculator.com'): StructuredData {
  return {
  '@context': 'https://schema.org',
  '@type': 'WebSite',

@@ -19,20 +19,20 @@ export function evaluate(expression: string, variables: Record<string, number>):
  }
 }
 
-export function formatNumber(value: number, precision: number = 2): string {
+export function formatNumber(value: number, precision = 2): string {
  return value.toLocaleString('en-US', {
  minimumFractionDigits: precision,
  maximumFractionDigits: precision
  })
 }
 
-export function formatCurrency(value: number, currency: string = 'USD'): string {
+export function formatCurrency(value: number, currency = 'USD'): string {
  return new Intl.NumberFormat('en-US', {
  style: 'currency',
  currency
  }).format(value)
 }
 
-export function formatPercentage(value: number, precision: number = 2): string {
+export function formatPercentage(value: number, precision = 2): string {
  return `${(value * 100).toFixed(precision)}%`
 }

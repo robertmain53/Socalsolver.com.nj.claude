@@ -10,7 +10,7 @@ export interface SitemapEntry {
 export class SitemapGenerator {
  static generateCalculatorSitemap(
  calculators: CalculatorSEO[],
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): SitemapEntry[] {
  return calculators.map(calculator => ({
  url: `${baseUrl}/calculators/${calculator.id}`,
@@ -22,7 +22,7 @@ export class SitemapGenerator {
 
  static generateCategorySitemap(
  categories: string[],
- baseUrl: string = 'https://yourcalculator.com'
+ baseUrl = 'https://yourcalculator.com'
  ): SitemapEntry[] {
  return categories.map(category => ({
  url: `${baseUrl}/categories/${category}`,
@@ -32,7 +32,7 @@ export class SitemapGenerator {
  }));
  }
 
- static generateStaticSitemap(baseUrl: string = 'https://yourcalculator.com'): SitemapEntry[] {
+ static generateStaticSitemap(baseUrl = 'https://yourcalculator.com'): SitemapEntry[] {
  return [
  {
  url: baseUrl,
