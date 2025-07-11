@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Guard: async/await inside 'use client'..."
+violations=$(grep -rl "'use client'" src | xargs grep -lE "await|async" || true)
+if [ -n "$violations" ]; then
+  echo "❌ Blocked commit. Async in client component(s):"
+  echo "$violations"
+  exit 1
+fi
+echo "✅ Guard passed"

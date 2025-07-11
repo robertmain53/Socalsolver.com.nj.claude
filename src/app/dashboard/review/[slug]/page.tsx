@@ -1,5 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CalculatorTest from '@/components/calculators/CalculatorTest';
+import { serialize } from 'next-mdx-remote/serialize'; // ✅ works with v4
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 export default async function EditPage({ params }: { params: { slug: string } }) {
   const slug = params.slug;

@@ -1,38 +1,32 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import CalculatorTest from '@/components/calculators/CalculatorTest';
-import EditorClient from '@/components/dashboard/EditorClient';
+import fs from 'fs/promises';
+import path from 'path';
+import matter from 'gray-matter';
+import { serialize } from 'next-mdx-remote/serialize';
+import MDXClient from '@/components/dashboard/MDXClient';     // 👈 new
 
-export default async function EditPage({ params }: { params: { slug: string } }) {
+export default async function EditPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
+  const filePath = path.join(
+    process.cwd(),
+    'content/calculators',
+    `${slug}.mdx`,
+  );
 
-  const contentRes = await fetch(`http://localhost:3000/api/content/${slug}`, {
-    cache: 'no-store'
-  });
-  const content = await contentRes.text();
+  // ── read + compile MDX on the server ──────────────────────
+  const raw = await fs.readFile(filePath, 'utf8');
+  const { content } = matter(raw);
+  const mdxSource = await serialize(content, { parseFrontmatter: true });
 
-  const statusRes = await fetch(`http://localhost:3000/api/status/${slug}`, {
-    cache: 'no-store'
-  });
-  const status = await statusRes.json();
-
+  // ── hand MDX to a *client* component for rendering ────────
   return (
-    <div className="max-w-screen-xl mx-auto p-8 space-y-10">
-      <h1 className="text-2xl font-bold">✍️ Editing: {slug}</h1>
-
-      {/* Inline Editor */}
-      <EditorClient
-        slug={slug}
-        initialContent={content}
-        initialStatus={status}
-      />
-
-      {/* Live Preview */}
-      <div className="border-t pt-10">
-        <h2 className="text-xl font-semibold mb-2">🧪 Live Preview</h2>
-        <div className="prose">
-          <MDXRemote source={content} components={{ CalculatorTest }} />
-        </div>
-      </div>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Editing: {slug}</h1>
+      {/* client-side rendering happens here */}
+      <MDXClient mdx={mdxSource} />
     </div>
   );
 }
