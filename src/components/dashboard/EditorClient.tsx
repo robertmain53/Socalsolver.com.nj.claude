@@ -1,20 +1,10 @@
-// ✅ Client Component
 'use client';
 
 import { useState } from 'react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import MDXComponents from '@/components/MDXComponents';
 
-type Props = {
-  slug: string;
-  initialContent: string;
-  initialStatus: {
-    status: string;
-    editorNotes: string;
-  };
-};
-
-export default function EditorClient({ slug, initialContent, initialStatus }: Props) {
+export default function EditorClient({ slug, initialContent, initialStatus }) {
   const [content, setContent] = useState(initialContent);
   const [status, setStatus] = useState(initialStatus);
   const [diff, setDiff] = useState('');
@@ -118,15 +108,16 @@ export default function EditorClient({ slug, initialContent, initialStatus }: Pr
         >
           🤖 Improve with AI
         </button>
+
         <button
           onClick={handleReview}
           className="bg-purple-600 text-white px-4 py-2 rounded"
         >
-          🧠 Run AI Review
+          🧠 Run AI Rubric Review
         </button>
       </div>
 
-      {/* Diff Viewer */}
+      {/* AI Diff */}
       {diff && (
         <div className="bg-black text-green-400 font-mono p-4 whitespace-pre-wrap rounded">
           <h2 className="font-bold text-white mb-2">📊 AI Suggested Diff</h2>
@@ -134,7 +125,7 @@ export default function EditorClient({ slug, initialContent, initialStatus }: Pr
         </div>
       )}
 
-      {/* AI Feedback */}
+      {/* AI Review */}
       {review && (
         <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
           <h2 className="text-yellow-700 font-bold mb-2">📋 AI Rubric Feedback</h2>

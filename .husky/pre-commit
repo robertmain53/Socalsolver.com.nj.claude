@@ -1,4 +1,17 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+echo "🔍 Checking for async/await usage in 'use client' files..."
+
+# This finds files using 'use client' + async|await
+MATCHES=$(grep -rl "'use client'" src | xargs grep -lE "await|async" || true)
+
+if [ -n "$MATCHES" ]; then
+  echo "❌ Commit blocked: Found async/await in client components:"
+  echo "$MATCHES"
+  echo "⚠️ Move async logic to a Server Component or API route instead."
+  exit 1
+fi
+
+echo "✅ No invalid async usage found in client components."
+

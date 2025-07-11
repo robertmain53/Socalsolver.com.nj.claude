@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+        "target": "ES2020",
+    "module": "commonjs",
+    "skipLibCheck": true,
     "lib": ["dom", "dom.iterable", "es6"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -30,6 +32,6 @@
       "@/content/*": ["./content/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["scripts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

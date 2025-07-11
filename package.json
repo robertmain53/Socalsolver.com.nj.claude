@@ -8,9 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "translate": "node scripts/translation-script.js --translate",
-    "generate-translations": "node scripts/translation-script.js --component"
+    "generate-translations": "node scripts/translation-script.js --component",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
     "clsx": "^2.0.0",
     "critters": "^0.0.25",
     "date-fns": "^2.30.0",
@@ -29,6 +32,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@next/mdx": "^15.3.5",
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
@@ -37,8 +41,10 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "^13.5.6",
     "glob": "^11.0.3",
+    "husky": "^9.1.7",
     "prettier": "^3.6.2",
-    "typescript": "^5.2.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "keywords": [
     "calculator",
