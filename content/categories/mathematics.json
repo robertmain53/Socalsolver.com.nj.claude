@@ -1,0 +1,23 @@
+{
+  "title": "Mathematics",
+  "description": "",
+  "faqs": [],
+  "seo": {},
+  "schema": {},
+  "subcategories": [
+    {
+      "slug": "basic-arithmetic",
+      "title": "Basic Arithmetic",
+      "subsubcategories": [
+        {
+          "slug": "addition",
+          "title": "Addition"
+        },
+        {
+          "slug": "subtraction",
+          "title": "Subtraction"
+        }
+      ]
+    }
+  ]
+}

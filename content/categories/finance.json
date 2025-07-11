@@ -1,0 +1,81 @@
+{
+  "title": "Finance",
+  "description": "",
+  "faqs": [],
+  "seo": {},
+  "schema": {},
+  "subcategories": [
+    {
+      "slug": "loans-mortgages",
+      "title": "Loans & Mortgages",
+      "subsubcategories": [
+        {
+          "slug": "mortgage-payment",
+          "title": "Mortgage Payment"
+        },
+        {
+          "slug": "mortgage-refinance",
+          "title": "Mortgage Refinance"
+        },
+        {
+          "slug": "loan-affordability",
+          "title": "Loan Affordability"
+        },
+        {
+          "slug": "loan-amortization",
+          "title": "Loan Amortization"
+        },
+        {
+          "slug": "personal-loan",
+          "title": "Personal Loan"
+        },
+        {
+          "slug": "car-loan",
+          "title": "Car Loan"
+        },
+        {
+          "slug": "student-loan",
+          "title": "Student Loan"
+        }
+      ]
+    },
+    {
+      "slug": "investment-savings",
+      "title": "Investment & Savings",
+      "subsubcategories": [
+        {
+          "slug": "compound-interest",
+          "title": "Compound Interest"
+        },
+        {
+          "slug": "simple-interest",
+          "title": "Simple Interest"
+        },
+        {
+          "slug": "return-on-investment-roi",
+          "title": "Return on Investment (ROI)"
+        },
+        {
+          "slug": "savings-goal",
+          "title": "Savings Goal"
+        },
+        {
+          "slug": "retirement-planning",
+          "title": "Retirement Planning"
+        },
+        {
+          "slug": "stock-calculators",
+          "title": "Stock Calculators"
+        },
+        {
+          "slug": "mutual-fund-etf-returns",
+          "title": "Mutual Fund/ETF Returns"
+        },
+        {
+          "slug": "cryptocurrency",
+          "title": "Cryptocurrency"
+        }
+      ]
+    }
+  ]
+}
