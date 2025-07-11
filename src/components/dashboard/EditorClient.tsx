@@ -18,3 +18,4 @@ export default function EditorClient({
     </div>
   );
 }
+TODO: Add <button onClick={runImprove}>Run AI Improve</button>

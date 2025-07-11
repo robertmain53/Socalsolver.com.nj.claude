@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { improveContentWithAI } from '@/lib/ai/improve'
-
-export async function POST(req: NextRequest) {
-  const body = await req.json()
-  const result = await improveContentWithAI(body)
-  return NextResponse.json(result)
+import { improveContent } from '@/lib/ai/improve'
+export const runtime = 'nodejs'
+export async function POST(req: Request) {
+  const { slug, content } = await req.json()
+  const improved = await improveContent(slug, content)
+  return Response.json({ improved })
 }
