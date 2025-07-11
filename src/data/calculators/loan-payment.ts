@@ -6,7 +6,7 @@ export const loanPaymentCalculator: CalculatorSEO = {
  description: 'Calculate monthly loan payments, total interest, and amortization schedules for any loan.',
  variables: [
  {
- name: 'loanAmount',
+ id: 'loanAmount',
  label: 'Loan Amount',
  type: 'number',
  required: true,
@@ -16,7 +16,7 @@ export const loanPaymentCalculator: CalculatorSEO = {
  description: 'Total amount you want to borrow',
  },
  {
- name: 'interestRate',
+ id: 'interestRate',
  label: 'Annual Interest Rate',
  type: 'number',
  required: true,
@@ -27,7 +27,7 @@ export const loanPaymentCalculator: CalculatorSEO = {
  description: 'Yearly interest rate offered by lender',
  },
  {
- name: 'loanTerm',
+ id: 'loanTerm',
  label: 'Loan Term',
  type: 'number',
  required: true,
@@ -38,7 +38,7 @@ export const loanPaymentCalculator: CalculatorSEO = {
  description: 'Length of time to repay the loan',
  },
  {
- name: 'extraPayment',
+ id: 'extraPayment',
  label: 'Extra Monthly Payment',
  type: 'number',
  required: false,
@@ -50,28 +50,28 @@ export const loanPaymentCalculator: CalculatorSEO = {
  ],
  formulas: [
  {
- name: 'monthlyPayment',
+ id: 'monthlyPayment',
  label: 'Monthly Payment',
  expression: 'loanAmount * (interestRate/100/12 * (1 + interestRate/100/12)^(loanTerm*12)) / ((1 + interestRate/100/12)^(loanTerm*12) - 1)',
  unit: 'currency',
  description: 'Required monthly payment (principal + interest)',
  },
  {
- name: 'totalPayments',
+ id: 'totalPayments',
  label: 'Total of Payments',
  expression: 'monthlyPayment * loanTerm * 12',
  unit: 'currency',
  description: 'Total amount paid over the life of the loan',
  },
  {
- name: 'totalInterest',
+ id: 'totalInterest',
  label: 'Total Interest Paid',
  expression: 'totalPayments - loanAmount',
  unit: 'currency',
  description: 'Total interest cost over the loan term',
  },
  {
- name: 'payoffTime',
+ id: 'payoffTime',
  label: 'Payoff Time with Extra Payments',
  expression: 'extraPayment > 0 ? log(1 + (monthlyPayment + extraPayment) * 12 / (loanAmount * interestRate/100)) / log(1 + interestRate/100/12) / 12 : loanTerm',
  unit: 'years',

@@ -23,9 +23,7 @@ export default function Developers() {
  <div>
  <h4 className="font-medium">3. Try a Calculation</h4>
  <div className="bg-gray-100 p-3 rounded text-sm font-mono">
- curl -X POST /api/v2/calculate<br/>
- -d '{"calculatorId":"mortgage","inputs":{"principal":300000,"rate":3.5,"term":30}}'
- </div>
+  </div>
  </div>
  </div>
  </div>

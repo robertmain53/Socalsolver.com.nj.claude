@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 export default function Quiz({ question, answer }: { question: string; answer: string }) {

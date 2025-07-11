@@ -6,7 +6,7 @@ export const bmiCalculator: CalculatorSEO = {
  description: 'Calculate your Body Mass Index (BMI) and understand your weight category with health recommendations.',
  variables: [
  {
- name: 'weight',
+ id: 'weight',
  label: 'Weight',
  type: 'number',
  required: true,
@@ -17,7 +17,7 @@ export const bmiCalculator: CalculatorSEO = {
  description: 'Your current body weight',
  },
  {
- name: 'height',
+ id: 'height',
  label: 'Height',
  type: 'number',
  required: true,
@@ -28,7 +28,7 @@ export const bmiCalculator: CalculatorSEO = {
  description: 'Your height measurement',
  },
  {
- name: 'age',
+ id: 'age',
  label: 'Age',
  type: 'number',
  required: false,
@@ -39,7 +39,7 @@ export const bmiCalculator: CalculatorSEO = {
  description: 'Your age (for additional context)',
  },
  {
- name: 'gender',
+ id: 'gender',
  label: 'Gender',
  type: 'select',
  required: false,
@@ -54,28 +54,28 @@ export const bmiCalculator: CalculatorSEO = {
  ],
  formulas: [
  {
- name: 'bmi',
+ id: 'bmi',
  label: 'Body Mass Index',
  expression: 'weight / (height/100)^2',
  unit: 'decimal',
  description: 'Your BMI value',
  },
  {
- name: 'category',
+ id: 'category',
  label: 'Weight Category',
  expression: 'bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal weight" : bmi < 30 ? "Overweight" : "Obese"',
  unit: 'text',
  description: 'BMI category classification',
  },
  {
- name: 'idealWeightMin',
+ id: 'idealWeightMin',
  label: 'Healthy Weight Range (Min)',
  expression: '18.5 * (height/100)^2',
  unit: 'weight',
  description: 'Minimum healthy weight for your height',
  },
  {
- name: 'idealWeightMax',
+ id: 'idealWeightMax',
  label: 'Healthy Weight Range (Max)',
  expression: '24.9 * (height/100)^2',
  unit: 'weight',

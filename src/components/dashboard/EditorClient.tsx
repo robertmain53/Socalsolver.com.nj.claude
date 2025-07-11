@@ -15,7 +15,8 @@ export default function EditorClient({
     <div>
       <h1>✍️ Editing: {slug}</h1>
       <MDXRemote {...initialContent} components={MDXComponents} />
+      <button onClick={runImprove}>Run AI Improve</button>
+
     </div>
   );
 }
-TODO: Add <button onClick={runImprove}>Run AI Improve</button>

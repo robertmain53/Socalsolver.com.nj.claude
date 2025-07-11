@@ -1,0 +1,11 @@
+analytics/**
+experiments/**
+embed/**
+exports/**
+history/**
+nlp/**
+personalization/**
+recommendations/**
+scripts/**
+automation/**
+dev-portal/**

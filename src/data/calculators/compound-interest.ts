@@ -6,7 +6,7 @@ export const compoundInterestCalculator: CalculatorSEO = {
  description: 'Calculate compound interest with monthly contributions and compare different compounding frequencies.',
  variables: [
  {
- name: 'principal',
+ id: 'principal',
  label: 'Initial Investment',
  type: 'number',
  required: true,
@@ -16,7 +16,7 @@ export const compoundInterestCalculator: CalculatorSEO = {
  description: 'The initial amount of money invested',
  },
  {
- name: 'rate',
+ id: 'rate',
  label: 'Annual Interest Rate',
  type: 'number',
  required: true,
@@ -27,7 +27,7 @@ export const compoundInterestCalculator: CalculatorSEO = {
  description: 'The yearly interest rate (as a percentage)',
  },
  {
- name: 'time',
+ id: 'time',
  label: 'Investment Period',
  type: 'number',
  required: true,
@@ -38,7 +38,7 @@ export const compoundInterestCalculator: CalculatorSEO = {
  description: 'How long you plan to invest',
  },
  {
- name: 'contribution',
+ id: 'contribution',
  label: 'Monthly Contribution',
  type: 'number',
  required: false,
@@ -48,7 +48,7 @@ export const compoundInterestCalculator: CalculatorSEO = {
  description: 'Additional monthly investment amount',
  },
  {
- name: 'frequency',
+ id: 'frequency',
  label: 'Compounding Frequency',
  type: 'select',
  required: true,
@@ -64,28 +64,28 @@ export const compoundInterestCalculator: CalculatorSEO = {
  ],
  formulas: [
  {
- name: 'finalAmount',
+ id: 'finalAmount',
  label: 'Final Amount',
  expression: 'principal * (1 + rate/100/frequency)^(frequency*time) + contribution * (((1 + rate/100/frequency)^(frequency*time) - 1) / (rate/100/frequency)) * 12',
  unit: 'currency',
  description: 'Total amount after compound growth',
  },
  {
- name: 'totalContributions',
+ id: 'totalContributions',
  label: 'Total Contributions',
  expression: 'principal + contribution * 12 * time',
  unit: 'currency',
  description: 'Sum of all money you put in',
  },
  {
- name: 'totalInterest',
+ id: 'totalInterest',
  label: 'Total Interest Earned',
  expression: 'finalAmount - totalContributions',
  unit: 'currency',
  description: 'Money earned from compound interest',
  },
  {
- name: 'effectiveRate',
+ id: 'effectiveRate',
  label: 'Effective Annual Rate',
  expression: '((finalAmount / totalContributions)^(1/time) - 1) * 100',
  unit: 'percentage',

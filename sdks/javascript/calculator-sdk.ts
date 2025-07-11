@@ -149,8 +149,14 @@ export class CalculatorSDK {
  if (attempt < this.config.retries) {
  const delay = Math.pow(2, attempt) * 1000; // Exponential backoff
  if (this.config.debug) {
- console.log(`Attempt ${attempt + 1} failed, retrying in ${delay}ms:`, error.message);
- }
+if (error instanceof Error) {
+  console.log(`Attempt ${attempt + 1} failed, retrying in ${delay}ms:`, error.message);
+} else {
+  console.log(`Attempt ${attempt + 1} failed, retrying in ${delay}ms:`, error);
+}
+
+
+}
  await this.sleep(delay);
  }
  }

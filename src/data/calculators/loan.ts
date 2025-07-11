@@ -7,7 +7,7 @@ export const loanConfig: CalculatorConfig = {
  category: 'finance',
  variables: [
  {
- name: 'amount',
+ id: 'amount',
  label: 'Loan Amount',
  type: 'currency',
  required: true,
@@ -19,7 +19,7 @@ export const loanConfig: CalculatorConfig = {
  }
  },
  {
- name: 'rate',
+ id: 'rate',
  label: 'Annual Interest Rate',
  type: 'percentage',
  required: true,
@@ -31,7 +31,7 @@ export const loanConfig: CalculatorConfig = {
  }
  },
  {
- name: 'term',
+ id: 'term',
  label: 'Loan Term',
  type: 'number',
  units: 'years',
@@ -46,21 +46,21 @@ export const loanConfig: CalculatorConfig = {
  ],
  formulas: [
  {
- name: 'monthlyPayment',
+ id: 'monthlyPayment',
  label: 'Monthly Payment',
  expression: '(amount * ((rate/100)/12) * (1 + (rate/100)/12)^(term*12)) / ((1 + (rate/100)/12)^(term*12) - 1)',
  resultType: 'currency',
  description: 'The monthly payment amount'
  },
  {
- name: 'totalPayment',
+ id: 'totalPayment',
  label: 'Total Payment',
  expression: '((amount * ((rate/100)/12) * (1 + (rate/100)/12)^(term*12)) / ((1 + (rate/100)/12)^(term*12) - 1)) * term * 12',
  resultType: 'currency',
  description: 'The total amount paid over the life of the loan'
  },
  {
- name: 'totalInterest',
+ id: 'totalInterest',
  label: 'Total Interest',
  expression: '(((amount * ((rate/100)/12) * (1 + (rate/100)/12)^(term*12)) / ((1 + (rate/100)/12)^(term*12) - 1)) * term * 12) - amount',
  resultType: 'currency',

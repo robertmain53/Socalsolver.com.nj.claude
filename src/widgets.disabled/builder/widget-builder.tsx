@@ -29,7 +29,7 @@ export default function WidgetBuilder() {
  
  const [embedCode, setEmbedCode] = useState('');
  const [previewUrl, setPreviewUrl] = useState('');
- const [loading, setLoading] = useState(false);
+ const [setLoading] = useState(false);
  
  useEffect(() => {
  if (config.calculatorId && config.domain) {
