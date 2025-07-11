@@ -1,0 +1,15 @@
+{
+  "title": "Science",
+  "description": "This category covers calculators related to Science.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Science."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Science Calculators",
+    "metaDescription": "This category covers calculators related to Science."
+  },
+  "schema": {}
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Mathematics",
+  "description": "This category covers calculators related to Mathematics.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Mathematics."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Mathematics Calculators",
+    "metaDescription": "This category covers calculators related to Mathematics."
+  },
+  "schema": {}
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Business",
+  "description": "This category covers calculators related to Business.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Business."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Business Calculators",
+    "metaDescription": "This category covers calculators related to Business."
+  },
+  "schema": {}
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Everyday",
+  "description": "This category covers calculators related to Everyday.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Everyday."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Everyday Calculators",
+    "metaDescription": "This category covers calculators related to Everyday."
+  },
+  "schema": {}
+}

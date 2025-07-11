@@ -1,0 +1,15 @@
+{
+  "title": "Finance",
+  "description": "This category covers calculators related to Finance.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Finance."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Finance Calculators",
+    "metaDescription": "This category covers calculators related to Finance."
+  },
+  "schema": {}
+}

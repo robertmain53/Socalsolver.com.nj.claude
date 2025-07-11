@@ -1,0 +1,15 @@
+{
+  "title": "Health",
+  "description": "This category covers calculators related to Health.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Health."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Health Calculators",
+    "metaDescription": "This category covers calculators related to Health."
+  },
+  "schema": {}
+}

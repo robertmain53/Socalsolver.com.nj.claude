@@ -1,0 +1,15 @@
+{
+  "title": "Environment",
+  "description": "This category covers calculators related to Environment.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Environment."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Environment Calculators",
+    "metaDescription": "This category covers calculators related to Environment."
+  },
+  "schema": {}
+}

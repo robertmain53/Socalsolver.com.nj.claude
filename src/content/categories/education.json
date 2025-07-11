@@ -1,0 +1,15 @@
+{
+  "title": "Education",
+  "description": "This category covers calculators related to Education.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Education."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Education Calculators",
+    "metaDescription": "This category covers calculators related to Education."
+  },
+  "schema": {}
+}

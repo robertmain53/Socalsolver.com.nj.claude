@@ -1,0 +1,15 @@
+{
+  "title": "Fun",
+  "description": "This category covers calculators related to Fun.",
+  "faq": [
+    {
+      "q": "What is this category about?",
+      "a": "It includes tools for Fun."
+    }
+  ],
+  "seo": {
+    "metaTitle": "Fun Calculators",
+    "metaDescription": "This category covers calculators related to Fun."
+  },
+  "schema": {}
+}
