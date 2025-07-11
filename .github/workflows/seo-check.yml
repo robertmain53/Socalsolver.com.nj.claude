@@ -1,0 +1,36 @@
+name: Lighthouse SEO Report
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run Lighthouse
+        run: |
+          npm install -g lighthouse
+          lighthouse http://localhost:3000/calculators/test \
+            --output html \
+            --output-path ./lh-report.html \
+            --only-categories=seo \
+            --chrome-flags="--headless"
+
+      - name: Upload report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: ./lh-report.html
