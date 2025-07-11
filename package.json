@@ -10,7 +10,8 @@
     "translate": "node scripts/translation-script.js --translate",
     "generate-translations": "node scripts/translation-script.js --component",
     "prepare": "husky install",
-    "new:calculator": "tsx scripts/new-calculator.ts"
+    "new:calculator": "tsx scripts/new-calculator.ts",
+    "test:api": "node test/improve-api.test.js"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -21,6 +22,7 @@
     "date-fns": "^2.30.0",
     "diff-match-patch": "^1.0.5",
     "dotenv": "^17.2.0",
+    "fast-diff": "^1.3.0",
     "framer-motion": "^10.16.0",
     "fs-extra": "^11.3.0",
     "gray-matter": "^4.0.3",
@@ -29,7 +31,7 @@
     "next": "13.5.6",
     "next-intl": "^4.3.4",
     "next-mdx-remote": "^4.4.1",
-    "openai": "^5.8.3",
+    "openai": "^5.9.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.47.0",
