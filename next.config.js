@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-});
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-});
+const nextConfig = {
+  i18n: {
+    locales: ['en', 'es', 'it', 'fr'],
+    defaultLocale: 'en',
+    localeDetection: false,
+  },
+  experimental: {
+    serverActions: true,   // 👈 add this line
+  },
+};
+
+module.exports = nextConfig;
