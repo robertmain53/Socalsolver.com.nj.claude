@@ -1,0 +1,27 @@
+name: SEO & Structured Data CI
+
+on:
+  pull_request:
+    paths:
+      - 'content/calculators/**.mdx'
+
+jobs:
+  seo-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run SEO Validator
+        run: npm run validate:seo
+
+      - name: Check Structured Data
+        run: npm run validate:schema

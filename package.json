@@ -11,7 +11,9 @@
     "generate-translations": "node scripts/translation-script.js --component",
     "prepare": "husky install",
     "new:calculator": "tsx scripts/new-calculator.ts",
-    "test:api": "node test/improve-api.test.js"
+    "test:api": "node test/improve-api.test.js",
+    "validate:seo": "tsx scripts/validate-seo.ts",
+    "validate:schema": "tsx scripts/validate-schema.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
